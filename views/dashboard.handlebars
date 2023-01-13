@@ -13,6 +13,10 @@
     <div class="row mb-2">
       <div class="col-md-8">
         <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
+        <div class="card-body post-body">
+        <p class="card-body post-content">{{post.content}}</p>
+        <p class="card-text post-author">Posted by <span class="post-username">{{post.username}}</span> on {{format_date post.date_posted}}</p>
+        </div>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
