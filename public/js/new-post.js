@@ -2,7 +2,7 @@ const newPostHandler = async (event) => {
     event.preventDefault();
   
     const title = document.querySelector('input[name="post-title"]').value;
-    const content = document.querySelector('input[name="content"]').value;
+    const content = document.querySelector('input[name="post-content"]').value;
   
     const response = await fetch(`/api/posts`, {
       method: 'POST',
@@ -22,4 +22,4 @@ const newPostHandler = async (event) => {
     }
 };
 
-document.querySelector('#new-post-form').addEventListener('click', newPostHandler);
+document.querySelector('button[class="btn"]').addEventListener('click', newPostHandler);
