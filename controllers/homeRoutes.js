@@ -82,6 +82,7 @@ router.get('/new-post', withAuth, async (req, res) => {
 });
 
 router.get('/comment', withAuth, async (req, res) => {
+  console.log("****");
   try {
     // Find the logged in user based on the session ID
     const userData = await Comment.findAll(req.session.user_id, {
@@ -96,6 +97,7 @@ router.get('/comment', withAuth, async (req, res) => {
       logged_in: true
     });
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
   }
 });
